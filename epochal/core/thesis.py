@@ -78,16 +78,17 @@ class ThesisCriteria:
         "Andreessen Horowitz", "NEA", "Insight Partners",
     ])
 
-    # Strategic acquirers - presence indicates M&A exit more likely than IPO
-    # These reduce IPO likelihood and create customer concentration risk
+    # Strategic acquirers - presence can be positive (resources) or negative (gutting)
+    # Only penalize when combined with leadership exodus
     strategic_acquirers: list[str] = field(default_factory=lambda: [
         "Meta", "Facebook", "NVIDIA", "Google", "Alphabet", "Microsoft",
         "Amazon", "AWS", "Apple", "Oracle", "Salesforce", "Adobe",
         "IBM", "Intel", "AMD", "Qualcomm",
     ])
 
-    # Penalty applied when strategic acquirer is investor (0-1, applied to liquidity score)
-    strategic_investor_penalty: float = 0.40  # 40% penalty to liquidity score
+    # Leadership risk penalty - applied when CEO/key execs leave for strategic investor
+    # This "guts" the company and signals acqui-hire rather than real exit
+    leadership_exodus_penalty: float = 0.50  # 50% penalty when company is being gutted
 
     # Scoring weights (should sum to 1.0)
     weight_vertical_fit: float = 0.15
@@ -171,7 +172,7 @@ class InvestmentThesis:
         else:
             scores["liquidity_signals"] = 20
 
-        # Strategic investor penalty - reduces IPO likelihood
+        # Strategic investor detection (informational, not automatically penalized)
         scores["has_strategic_investor"] = False
         scores["strategic_investors"] = []
         if company.key_investors:
@@ -181,11 +182,16 @@ class InvestmentThesis:
                         scores["has_strategic_investor"] = True
                         scores["strategic_investors"].append(investor)
 
-        if scores["has_strategic_investor"]:
-            # Apply penalty to liquidity signals (M&A more likely than IPO)
-            penalty = criteria.strategic_investor_penalty
-            scores["liquidity_signals"] = int(scores["liquidity_signals"] * (1 - penalty))
-            scores["strategic_penalty_applied"] = penalty
+        # Leadership exodus check - ONLY penalize when company is being gutted
+        # (CEO/key execs leaving to join strategic investor)
+        scores["leadership_exodus"] = False
+        if hasattr(company, 'tags') and company.tags:
+            gutting_signals = ["ceo_departed", "leadership_exodus", "gutted", "acqui-hire"]
+            if any(signal in tag.lower() for tag in company.tags for signal in gutting_signals):
+                scores["leadership_exodus"] = True
+                penalty = criteria.leadership_exodus_penalty
+                scores["liquidity_signals"] = int(scores["liquidity_signals"] * (1 - penalty))
+                scores["leadership_penalty_applied"] = penalty
 
         # Calculate weighted total
         total = (

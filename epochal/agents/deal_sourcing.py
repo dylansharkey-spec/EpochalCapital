@@ -78,7 +78,7 @@ TRACKED_AI_COMPANIES = [
         "valuation_usd": 14_000_000_000,
         "key_investors": ["Accel", "Index Ventures", "Founders Fund", "Tiger Global", "Meta"],
         "liquidity_signals": ["Government contracts", "Enterprise growth"],
-        "risk_factors": ["CEO departure", "Meta strategic investment reduces IPO likelihood", "Customer concentration risk", "Leadership transition"],
+        "tags": ["ceo_departed", "leadership_exodus"],  # CEO left to join Meta - company gutted
     },
     {
         "name": "Anduril",
@@ -142,7 +142,7 @@ TRACKED_AI_COMPANIES = [
         "valuation_usd": 2_800_000_000,
         "key_investors": ["Tiger Global", "D1 Capital", "BlackRock", "NVIDIA"],
         "liquidity_signals": ["Infrastructure demand", "Inference market growth"],
-        "risk_factors": ["NVIDIA strategic investment signals potential acquisition", "Competitive with NVIDIA in inference", "Customer concentration risk"],
+        "tags": ["leadership_exodus"],  # Key leadership moved to NVIDIA
     },
     {
         "name": "Weights & Biases",
@@ -327,6 +327,7 @@ class DealSourcingAgent(Agent):
                 valuation_usd=company_data.get("valuation_usd"),
                 key_investors=company_data.get("key_investors", []),
                 liquidity_signals=company_data.get("liquidity_signals", []),
+                tags=company_data.get("tags", []),
             )
 
             # Score against thesis
@@ -377,6 +378,7 @@ class DealSourcingAgent(Agent):
             valuation_usd=company_data.get("valuation_usd"),
             key_investors=company_data.get("key_investors", []),
             liquidity_signals=company_data.get("liquidity_signals", []),
+            tags=company_data.get("tags", []),
         )
 
         scores = self.thesis.score_company(company)
@@ -453,6 +455,7 @@ class DealSourcingAgent(Agent):
                 valuation_usd=company_data.get("valuation_usd"),
                 key_investors=company_data.get("key_investors", []),
                 liquidity_signals=company_data.get("liquidity_signals", []),
+                tags=company_data.get("tags", []),
             )
 
             scores = self.thesis.score_company(company)
