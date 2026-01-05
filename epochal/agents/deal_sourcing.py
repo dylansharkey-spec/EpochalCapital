@@ -225,6 +225,24 @@ TRACKED_AI_COMPANIES = [
         "key_investors": ["Coatue", "Lightspeed", "O'Shaughnessy Ventures"],
         "liquidity_signals": ["Image generation leader", "Enterprise licensing"],
     },
+    {
+        "name": "Lambda Labs",
+        "description": "GPU cloud platform for AI training and inference",
+        "vertical": AIVertical.INFRASTRUCTURE,
+        "stage": CompanyStage.SERIES_C,
+        "valuation_usd": 1_500_000_000,
+        "key_investors": ["Gradient Ventures", "Bloomberg Beta", "Razer"],
+        "liquidity_signals": ["GPU demand surge", "Enterprise cloud growth", "Data center expansion"],
+    },
+    {
+        "name": "Lightmatter",
+        "description": "Photonic AI chip company building optical processors for AI workloads",
+        "vertical": AIVertical.INFRASTRUCTURE,
+        "stage": CompanyStage.SERIES_D_PLUS,
+        "valuation_usd": 4_400_000_000,
+        "key_investors": ["GV", "HPE", "Viking Global", "Fidelity"],
+        "liquidity_signals": ["Photonic computing breakthrough", "Data center partnerships", "Strong IPO candidate"],
+    },
 ]
 
 
