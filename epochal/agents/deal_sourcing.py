@@ -227,21 +227,35 @@ TRACKED_AI_COMPANIES = [
     },
     {
         "name": "Lambda Labs",
-        "description": "GPU cloud platform for AI training and inference",
+        "description": "GPU cloud platform for AI training and inference, powers Microsoft, OpenAI, Anthropic, xAI",
         "vertical": AIVertical.INFRASTRUCTURE,
-        "stage": CompanyStage.SERIES_C,
-        "valuation_usd": 1_500_000_000,
-        "key_investors": ["Gradient Ventures", "Bloomberg Beta", "Razer"],
-        "liquidity_signals": ["GPU demand surge", "Enterprise cloud growth", "Data center expansion"],
+        "stage": CompanyStage.PRE_IPO,
+        "valuation_usd": 12_000_000_000,  # Estimated $10-15B after Series E
+        "key_investors": ["NVIDIA", "TWG Global", "ARK Invest", "In-Q-Tel", "G Squared"],
+        "liquidity_signals": [
+            "IPO targeting H1 2026",
+            "Hired Morgan Stanley, JP Morgan, Citi as IPO advisors",
+            "$1.5B Series E Nov 2025",
+            "$500M ARR run rate",
+            "Microsoft infrastructure deal",
+            "NVIDIA strategic backer",
+        ],
+        "revenue_arr_usd": 500_000_000,
     },
     {
         "name": "Lightmatter",
-        "description": "Photonic AI chip company building optical processors for AI workloads",
+        "description": "Photonic AI chip company building optical interconnects for AI data centers",
         "vertical": AIVertical.INFRASTRUCTURE,
         "stage": CompanyStage.SERIES_D_PLUS,
         "valuation_usd": 4_400_000_000,
-        "key_investors": ["GV", "HPE", "Viking Global", "Fidelity"],
-        "liquidity_signals": ["Photonic computing breakthrough", "Data center partnerships", "Strong IPO candidate"],
+        "key_investors": ["Founders Fund", "Fidelity", "T. Rowe Price", "Lux Capital", "M12"],
+        "liquidity_signals": [
+            "CEO stated IPO as next funding source",
+            "$850M total raised",
+            "Passage L200/M1000 platforms launched March 2025",
+            "UALink Consortium member",
+            "Major chip packaging partnerships",
+        ],
     },
 ]
 
