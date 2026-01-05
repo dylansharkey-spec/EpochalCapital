@@ -1,0 +1,91 @@
+# Epochal Capital Investment Thesis Configuration
+# Modify these parameters to adjust investment criteria
+
+thesis:
+  name: "Epochal Capital AI Liquidity Strategy"
+  version: "1.0"
+
+target_profile:
+  # AI verticals we're interested in
+  verticals:
+    - foundation_models
+    - infrastructure
+    - ai_agents
+    - developer_tools
+    - enterprise_ai
+    - data_infrastructure
+    - mlops
+
+  # Target company stages
+  stages:
+    - series_b
+    - series_c
+    - series_d_plus
+    - pre_ipo
+
+valuation_criteria:
+  # Valuation range in USD
+  min_valuation: 100_000_000  # $100M
+  max_valuation: 50_000_000_000  # $50B
+  preferred_min: 500_000_000  # $500M
+  preferred_max: 10_000_000_000  # $10B
+
+liquidity_requirements:
+  # Time to liquidity in months
+  max_months: 36
+  preferred_months: 18
+
+  # Preferred liquidity event types
+  preferred_events:
+    - ipo
+    - direct_listing
+    - acquisition
+
+financial_criteria:
+  # Minimum ARR in USD
+  min_arr: 10_000_000  # $10M
+
+  # Minimum YoY growth
+  min_growth_yoy: 0.50  # 50%
+
+discount_requirements:
+  # Discount to last round
+  min_discount: 0.10  # 10%
+  preferred_discount: 0.25  # 25%
+
+check_size:
+  # Investment size range in USD
+  min: 100_000  # $100K
+  max: 5_000_000  # $5M
+  target: 500_000  # $500K
+
+scoring_weights:
+  # Weights for thesis scoring (should sum to ~1.0)
+  vertical_fit: 0.15
+  stage_fit: 0.10
+  liquidity_timeline: 0.25
+  valuation_attractiveness: 0.15
+  discount: 0.15
+  investor_quality: 0.10
+  revenue_metrics: 0.10
+
+quality_investors:
+  # Top-tier investors that signal quality
+  - a16z
+  - Andreessen Horowitz
+  - Sequoia
+  - Benchmark
+  - Greylock
+  - Index Ventures
+  - Founders Fund
+  - Thrive Capital
+  - Tiger Global
+  - Coatue
+  - General Catalyst
+  - Lightspeed
+  - Accel
+  - Bessemer
+  - NEA
+  - Insight Partners
+  - Khosla Ventures
+  - Kleiner Perkins
