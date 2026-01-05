@@ -140,8 +140,9 @@ TRACKED_AI_COMPANIES = [
         "vertical": AIVertical.INFRASTRUCTURE,
         "stage": CompanyStage.SERIES_D_PLUS,
         "valuation_usd": 2_800_000_000,
-        "key_investors": ["Tiger Global", "D1 Capital", "BlackRock"],
+        "key_investors": ["Tiger Global", "D1 Capital", "BlackRock", "NVIDIA"],
         "liquidity_signals": ["Infrastructure demand", "Inference market growth"],
+        "risk_factors": ["NVIDIA strategic investment signals potential acquisition", "Competitive with NVIDIA in inference", "Customer concentration risk"],
     },
     {
         "name": "Weights & Biases",

@@ -72,11 +72,22 @@ class ThesisCriteria:
 
     # Quality signals
     required_investor_quality: list[str] = field(default_factory=lambda: [
-        "a]16z", "Sequoia", "Benchmark", "Greylock", "Index Ventures",
+        "a16z", "Sequoia", "Benchmark", "Greylock", "Index Ventures",
         "Founders Fund", "Thrive Capital", "Tiger Global", "Coatue",
         "General Catalyst", "Lightspeed", "Accel", "Bessemer",
         "Andreessen Horowitz", "NEA", "Insight Partners",
     ])
+
+    # Strategic acquirers - presence indicates M&A exit more likely than IPO
+    # These reduce IPO likelihood and create customer concentration risk
+    strategic_acquirers: list[str] = field(default_factory=lambda: [
+        "Meta", "Facebook", "NVIDIA", "Google", "Alphabet", "Microsoft",
+        "Amazon", "AWS", "Apple", "Oracle", "Salesforce", "Adobe",
+        "IBM", "Intel", "AMD", "Qualcomm",
+    ])
+
+    # Penalty applied when strategic acquirer is investor (0-1, applied to liquidity score)
+    strategic_investor_penalty: float = 0.40  # 40% penalty to liquidity score
 
     # Scoring weights (should sum to 1.0)
     weight_vertical_fit: float = 0.15
@@ -159,6 +170,22 @@ class InvestmentThesis:
             scores["liquidity_signals"] = signal_strength
         else:
             scores["liquidity_signals"] = 20
+
+        # Strategic investor penalty - reduces IPO likelihood
+        scores["has_strategic_investor"] = False
+        scores["strategic_investors"] = []
+        if company.key_investors:
+            for investor in company.key_investors:
+                for strategic in criteria.strategic_acquirers:
+                    if strategic.lower() in investor.lower():
+                        scores["has_strategic_investor"] = True
+                        scores["strategic_investors"].append(investor)
+
+        if scores["has_strategic_investor"]:
+            # Apply penalty to liquidity signals (M&A more likely than IPO)
+            penalty = criteria.strategic_investor_penalty
+            scores["liquidity_signals"] = int(scores["liquidity_signals"] * (1 - penalty))
+            scores["strategic_penalty_applied"] = penalty
 
         # Calculate weighted total
         total = (
