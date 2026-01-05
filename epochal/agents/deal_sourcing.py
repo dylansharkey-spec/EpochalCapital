@@ -76,8 +76,9 @@ TRACKED_AI_COMPANIES = [
         "vertical": AIVertical.DATA_INFRASTRUCTURE,
         "stage": CompanyStage.SERIES_D_PLUS,
         "valuation_usd": 14_000_000_000,
-        "key_investors": ["Accel", "Index Ventures", "Founders Fund", "Tiger Global"],
-        "liquidity_signals": ["Government contracts", "Enterprise growth", "Potential IPO"],
+        "key_investors": ["Accel", "Index Ventures", "Founders Fund", "Tiger Global", "Meta"],
+        "liquidity_signals": ["Government contracts", "Enterprise growth"],
+        "risk_factors": ["CEO departure", "Meta strategic investment reduces IPO likelihood", "Customer concentration risk", "Leadership transition"],
     },
     {
         "name": "Anduril",
