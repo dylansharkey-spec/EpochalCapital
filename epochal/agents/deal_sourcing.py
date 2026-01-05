@@ -47,9 +47,10 @@ TRACKED_AI_COMPANIES = [
         "description": "AI safety company building Claude, a helpful, harmless, and honest AI assistant",
         "vertical": AIVertical.FOUNDATION_MODELS,
         "stage": CompanyStage.SERIES_D_PLUS,
-        "valuation_usd": 18_000_000_000,
-        "key_investors": ["Google", "Spark Capital", "Salesforce Ventures", "Menlo Ventures"],
-        "liquidity_signals": ["Strong revenue growth", "Enterprise adoption", "Potential IPO discussions"],
+        "valuation_usd": 60_000_000_000,
+        "key_investors": ["Google", "Spark Capital", "Salesforce Ventures", "Menlo Ventures", "Lightspeed", "General Catalyst", "Tiger Global", "Thrive Capital"],
+        "liquidity_signals": ["Strong revenue growth", "Enterprise adoption", "Potential IPO discussions", "AWS partnership", "$2B+ ARR run rate"],
+        "revenue_arr_usd": 2_000_000_000,
     },
     {
         "name": "OpenAI",
