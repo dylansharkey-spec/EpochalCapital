@@ -26,6 +26,7 @@ from epochal.core.models import (
     CompanyStage,
 )
 from epochal.utils.formatters import format_currency, format_report
+from epochal.core.research_workflows import ResearchWorkflows, get_research_status
 
 
 class EpochalCLI:
@@ -46,6 +47,9 @@ class EpochalCLI:
         self.orchestrator.register_agent(self.deal_sourcing_agent)
         self.orchestrator.register_agent(self.research_agent)
         self.orchestrator.register_agent(self.portfolio_agent)
+
+        # Initialize research workflows
+        self.research_workflows = ResearchWorkflows(data_dir=data_dir)
 
     def print_header(self):
         """Print CLI header."""
@@ -283,12 +287,85 @@ class EpochalCLI:
 
         return company
 
+    async def research_company(self, company_name: str) -> dict:
+        """Run comprehensive research on a company."""
+        print(f"\n[*] Running comprehensive research on {company_name}...")
+        print("[*] Generating search queries for: funding, IPO, leadership, M&A news")
+
+        # Show the queries that would be run
+        queries = self.research_workflows.generate_research_queries(company_name)
+        print("\n[*] Research queries:")
+        for q in queries:
+            print(f"    → {q}")
+
+        # Run the research workflow
+        result = await self.research_workflows.research_company_comprehensive(company_name)
+
+        print(f"\n[+] Research recorded for {company_name}")
+        print(f"[+] Research date: {result.research_date.strftime('%Y-%m-%d %H:%M UTC')}")
+
+        # Show last research if available
+        last = self.research_workflows.get_last_research(company_name)
+        if last:
+            print(f"\n[*] Research history saved")
+            if last.get("sources"):
+                print(f"[*] Sources: {len(last['sources'])} found")
+
+        return result.to_dict()
+
+    async def refresh_research(self, force: bool = False) -> dict:
+        """Refresh research for all tracked companies."""
+        from epochal.agents.deal_sourcing import TRACKED_AI_COMPANIES
+
+        company_names = [c["name"] for c in TRACKED_AI_COMPANIES]
+
+        print(f"\n[*] Scheduled Research Refresh")
+        print(f"[*] Companies tracked: {len(company_names)}")
+
+        # Show status
+        status = get_research_status()
+        print(f"[*] Recently researched (last 3 days): {status['recently_researched']}")
+        print(f"[*] Needing refresh: {status['needs_refresh']}")
+
+        if not force and status['needs_refresh'] == 0:
+            print("\n[+] All companies recently researched. Use 'refresh --force' to force update.")
+            return status
+
+        print(f"\n[*] Starting refresh...")
+        max_age = 0 if force else 3
+
+        results = await self.research_workflows.refresh_all_companies(
+            company_names=company_names,
+            max_age_days=max_age,
+        )
+
+        print(f"\n[+] Refreshed {len(results)} companies")
+        return {"refreshed": len(results), "status": get_research_status()}
+
+    def show_research_status(self):
+        """Show research status."""
+        status = get_research_status()
+
+        print("\n[*] Research Status:")
+        print("-" * 50)
+        print(f"    Total companies tracked:  {status['total_companies_tracked']}")
+        print(f"    Recently researched:      {status['recently_researched']}")
+        print(f"    Needing refresh:          {status['needs_refresh']}")
+        print(f"    Last full refresh:        {status['last_full_refresh'] or 'Never'}")
+
+        # Show schedule recommendation
+        print("\n[*] Recommended schedule: Run 'refresh' Monday & Thursday")
+        print("    Cron: 0 6 * * 1,4 python scripts/scheduled_research.py")
+
     def get_commands(self) -> dict:
         """Get available commands."""
         return {
             "scan": "Scan market for AI investment opportunities",
             "liquidity": "Find companies with upcoming liquidity events",
             "evaluate <company>": "Evaluate a specific company",
+            "research <company>": "Run comprehensive research on a company",
+            "refresh": "Refresh research for all tracked companies",
+            "research-status": "Show research workflow status",
             "portfolio": "View portfolio summary",
             "briefing": "Run comprehensive daily briefing",
             "agents": "Show agent status",
@@ -323,6 +400,14 @@ async def main():
         elif command == "evaluate" and len(sys.argv) > 2:
             company = " ".join(sys.argv[2:])
             await cli.evaluate_company(company)
+        elif command == "research" and len(sys.argv) > 2:
+            company = " ".join(sys.argv[2:])
+            await cli.research_company(company)
+        elif command == "refresh":
+            force = "--force" in sys.argv
+            await cli.refresh_research(force=force)
+        elif command == "research-status":
+            cli.show_research_status()
         elif command == "portfolio":
             await cli.portfolio_summary()
         elif command == "briefing":
@@ -363,6 +448,17 @@ async def main():
                         await cli.evaluate_company(company)
                     else:
                         print("Usage: evaluate <company_name>")
+                elif command == "research":
+                    if len(parts) > 1:
+                        company = " ".join(parts[1:])
+                        await cli.research_company(company)
+                    else:
+                        print("Usage: research <company_name>")
+                elif command == "refresh":
+                    force = "--force" in parts
+                    await cli.refresh_research(force=force)
+                elif command == "research-status":
+                    cli.show_research_status()
                 elif command == "portfolio":
                     await cli.portfolio_summary()
                 elif command == "briefing":
