@@ -10,6 +10,7 @@ from epochal.agents.orchestrator import AgentOrchestrator
 from epochal.agents.deal_sourcing import DealSourcingAgent
 from epochal.agents.research import ResearchAgent
 from epochal.agents.portfolio import PortfolioAgent
+from epochal.agents.investor_relations import InvestorRelationsAgent
 
 __all__ = [
     "Agent",
@@ -20,4 +21,5 @@ __all__ = [
     "DealSourcingAgent",
     "ResearchAgent",
     "PortfolioAgent",
+    "InvestorRelationsAgent",
 ]

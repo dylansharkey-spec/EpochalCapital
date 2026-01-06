@@ -13,6 +13,7 @@ from typing import Optional
 from epochal.agents.deal_sourcing import DealSourcingAgent
 from epochal.agents.research import ResearchAgent
 from epochal.agents.portfolio import PortfolioAgent
+from epochal.agents.investor_relations import InvestorRelationsAgent
 from epochal.agents.orchestrator import AgentOrchestrator
 from epochal.agents.base import AgentRole
 from epochal.core.portfolio import Portfolio
@@ -43,10 +44,12 @@ class EpochalCLI:
         self.deal_sourcing_agent = DealSourcingAgent()
         self.research_agent = ResearchAgent()
         self.portfolio_agent = PortfolioAgent(portfolio=self.portfolio)
+        self.ir_agent = InvestorRelationsAgent(portfolio=self.portfolio)
 
         self.orchestrator.register_agent(self.deal_sourcing_agent)
         self.orchestrator.register_agent(self.research_agent)
         self.orchestrator.register_agent(self.portfolio_agent)
+        self.orchestrator.register_agent(self.ir_agent)
 
         # Initialize research workflows
         self.research_workflows = ResearchWorkflows(data_dir=data_dir)
@@ -357,6 +360,199 @@ class EpochalCLI:
         print("\n[*] Recommended schedule: Run 'refresh' Monday & Thursday")
         print("    Cron: 0 6 * * 1,4 python scripts/scheduled_research.py")
 
+    # =========================================================================
+    # IR (Investor Relations) Commands
+    # =========================================================================
+
+    async def draft_substack(self, topic: str = "thesis") -> dict:
+        """Draft a Substack article."""
+        print(f"\n[*] Drafting Substack article on: {topic}")
+
+        from epochal.agents.base import AgentTask
+
+        task = AgentTask(
+            name="Draft Substack",
+            description=f"Draft Substack article on {topic}",
+            agent_role=AgentRole.INVESTOR_RELATIONS,
+            input_data={"capability": "draft_substack", "topic": topic},
+        )
+
+        result = await self.orchestrator.execute_task(task)
+
+        if result.success:
+            data = result.data
+            draft = data["draft"]
+            print(f"\n[+] Article drafted successfully!")
+            print(f"    Platform: {data['platform']}")
+            print(f"    Word count: {draft['word_count']}")
+            print(f"    Estimated read time: {data['estimated_read_time']}")
+            print(f"    Best publish time: {data['recommended_publish_time']}")
+            print("\n" + "=" * 60)
+            print("DRAFT CONTENT:")
+            print("=" * 60)
+            print(draft["body"])
+            return data
+        else:
+            print(f"[!] Error: {result.error}")
+            return {}
+
+    async def draft_linkedin(self, topic: str = "AI market") -> dict:
+        """Draft a LinkedIn post."""
+        print(f"\n[*] Drafting LinkedIn post on: {topic}")
+
+        from epochal.agents.base import AgentTask
+
+        task = AgentTask(
+            name="Draft LinkedIn",
+            description=f"Draft LinkedIn post on {topic}",
+            agent_role=AgentRole.INVESTOR_RELATIONS,
+            input_data={"capability": "draft_linkedin", "topic": topic},
+        )
+
+        result = await self.orchestrator.execute_task(task)
+
+        if result.success:
+            data = result.data
+            draft = data["draft"]
+            print(f"\n[+] LinkedIn post drafted!")
+            print(f"    Character count: {data['character_count']}")
+            print(f"    Best publish time: {data['recommended_publish_time']}")
+            print("\n" + "=" * 60)
+            print("DRAFT CONTENT:")
+            print("=" * 60)
+            print(draft["body"])
+            print("\n" + "-" * 40)
+            print(f"Hashtags: {' '.join('#' + h for h in draft['hashtags'])}")
+            return data
+        else:
+            print(f"[!] Error: {result.error}")
+            return {}
+
+    async def draft_twitter(self, topic: str = "AI IPOs") -> dict:
+        """Draft a Twitter/X thread."""
+        print(f"\n[*] Drafting Twitter thread on: {topic}")
+
+        from epochal.agents.base import AgentTask
+
+        task = AgentTask(
+            name="Draft Twitter",
+            description=f"Draft Twitter thread on {topic}",
+            agent_role=AgentRole.INVESTOR_RELATIONS,
+            input_data={"capability": "draft_twitter", "topic": topic},
+        )
+
+        result = await self.orchestrator.execute_task(task)
+
+        if result.success:
+            data = result.data
+            draft = data["draft"]
+            print(f"\n[+] Twitter thread drafted!")
+            print(f"    Tweet count: {draft['tweet_count']}")
+            print(f"    Total characters: {draft['total_characters']}")
+            print(f"    Best publish time: {data['recommended_publish_time']}")
+            print("\n" + "=" * 60)
+            print("THREAD:")
+            print("=" * 60)
+            for i, tweet in enumerate(draft["thread"], 1):
+                print(f"\n--- Tweet {i}/{draft['tweet_count']} ---")
+                print(tweet)
+            return data
+        else:
+            print(f"[!] Error: {result.error}")
+            return {}
+
+    async def draft_investor_update(self) -> dict:
+        """Draft quarterly investor update."""
+        print("\n[*] Drafting quarterly investor update...")
+
+        from epochal.agents.base import AgentTask
+
+        task = AgentTask(
+            name="Draft Investor Update",
+            description="Draft quarterly LP update",
+            agent_role=AgentRole.INVESTOR_RELATIONS,
+            input_data={"capability": "draft_investor_update"},
+        )
+
+        result = await self.orchestrator.execute_task(task)
+
+        if result.success:
+            data = result.data
+            draft = data["draft"]
+            print(f"\n[+] Investor update drafted!")
+            print(f"    Type: {data['type']}")
+            print(f"    Sections: {', '.join(data['sections'])}")
+            print(f"    Word count: {draft['word_count']}")
+            print("\n" + "=" * 60)
+            print(f"TITLE: {draft['title']}")
+            print("=" * 60)
+            print(draft["body"])
+            return data
+        else:
+            print(f"[!] Error: {result.error}")
+            return {}
+
+    async def draft_pitch(self) -> dict:
+        """Draft fundraising pitch narrative."""
+        print("\n[*] Drafting fundraising pitch narrative...")
+
+        from epochal.agents.base import AgentTask
+
+        task = AgentTask(
+            name="Draft Pitch",
+            description="Draft fundraising pitch",
+            agent_role=AgentRole.INVESTOR_RELATIONS,
+            input_data={"capability": "draft_fundraising_pitch"},
+        )
+
+        result = await self.orchestrator.execute_task(task)
+
+        if result.success:
+            data = result.data
+            draft = data["draft"]
+            print(f"\n[+] Pitch narrative drafted!")
+            print(f"    Type: {data['type']}")
+            print(f"    Recommended sections: {', '.join(data['recommended_sections'])}")
+            print(f"    Word count: {draft['word_count']}")
+            print("\n" + "=" * 60)
+            print(f"TITLE: {draft['title']}")
+            print("=" * 60)
+            print(draft["body"])
+            return data
+        else:
+            print(f"[!] Error: {result.error}")
+            return {}
+
+    async def draft_market_commentary(self) -> dict:
+        """Generate AI market commentary."""
+        print("\n[*] Generating AI market commentary...")
+
+        from epochal.agents.base import AgentTask
+
+        task = AgentTask(
+            name="Market Commentary",
+            description="Generate AI market commentary",
+            agent_role=AgentRole.INVESTOR_RELATIONS,
+            input_data={"capability": "generate_market_commentary"},
+        )
+
+        result = await self.orchestrator.execute_task(task)
+
+        if result.success:
+            data = result.data
+            draft = data["draft"]
+            print(f"\n[+] Market commentary generated!")
+            print(f"    Type: {data['type']}")
+            print(f"    Sections: {', '.join(data['sections'])}")
+            print("\n" + "=" * 60)
+            print(f"TITLE: {draft['title']}")
+            print("=" * 60)
+            print(draft["body"])
+            return data
+        else:
+            print(f"[!] Error: {result.error}")
+            return {}
+
     def get_commands(self) -> dict:
         """Get available commands."""
         return {
@@ -371,6 +567,13 @@ class EpochalCLI:
             "agents": "Show agent status",
             "thesis": "Show investment thesis",
             "add <company>": "Add company to watchlist",
+            # IR Commands
+            "substack [topic]": "Draft a Substack article",
+            "linkedin [topic]": "Draft a LinkedIn post",
+            "twitter [topic]": "Draft a Twitter thread",
+            "investor-update": "Draft quarterly investor update",
+            "pitch": "Draft fundraising pitch narrative",
+            "market-commentary": "Generate AI market commentary",
             "help": "Show this help message",
             "exit": "Exit the CLI",
         }
@@ -416,6 +619,22 @@ async def main():
             cli.show_agent_status()
         elif command == "thesis":
             cli.print_thesis()
+        # IR Commands
+        elif command == "substack":
+            topic = " ".join(sys.argv[2:]) if len(sys.argv) > 2 else "thesis"
+            await cli.draft_substack(topic)
+        elif command == "linkedin":
+            topic = " ".join(sys.argv[2:]) if len(sys.argv) > 2 else "AI market"
+            await cli.draft_linkedin(topic)
+        elif command == "twitter":
+            topic = " ".join(sys.argv[2:]) if len(sys.argv) > 2 else "AI IPOs"
+            await cli.draft_twitter(topic)
+        elif command == "investor-update":
+            await cli.draft_investor_update()
+        elif command == "pitch":
+            await cli.draft_pitch()
+        elif command == "market-commentary":
+            await cli.draft_market_commentary()
         elif command == "help":
             cli.print_help()
         else:
@@ -467,6 +686,22 @@ async def main():
                     cli.show_agent_status()
                 elif command == "thesis":
                     cli.print_thesis()
+                # IR Commands
+                elif command == "substack":
+                    topic = " ".join(parts[1:]) if len(parts) > 1 else "thesis"
+                    await cli.draft_substack(topic)
+                elif command == "linkedin":
+                    topic = " ".join(parts[1:]) if len(parts) > 1 else "AI market"
+                    await cli.draft_linkedin(topic)
+                elif command == "twitter":
+                    topic = " ".join(parts[1:]) if len(parts) > 1 else "AI IPOs"
+                    await cli.draft_twitter(topic)
+                elif command == "investor-update":
+                    await cli.draft_investor_update()
+                elif command == "pitch":
+                    await cli.draft_pitch()
+                elif command == "market-commentary":
+                    await cli.draft_market_commentary()
                 elif command == "help":
                     cli.print_help()
                 else:
