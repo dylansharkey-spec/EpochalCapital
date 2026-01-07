@@ -33,24 +33,33 @@ The platform uses specialized AI agents that can work independently or in coordi
 | Deal Sourcing Agent | Find opportunities | Market scan, company evaluation, liquidity analysis |
 | Research Agent | Due diligence | Company research, market analysis, competitive analysis |
 | Portfolio Agent | Portfolio management | Tracking, risk analysis, performance reporting |
+| Investor Relations Agent | Communications | Substack, LinkedIn, Twitter, LP updates, fundraising |
 
 ### Core Modules
 
 ```
 epochal/
-├── agents/           # AI agent implementations
-│   ├── base.py       # Base agent framework
-│   ├── deal_sourcing.py
-│   ├── research.py
-│   ├── portfolio.py
-│   └── orchestrator.py
-├── core/             # Core business logic
-│   ├── models.py     # Data models (Company, Deal, Investment, etc.)
-│   ├── thesis.py     # Investment thesis and scoring
-│   └── portfolio.py  # Portfolio management
-├── integrations/     # External platform integrations
-├── utils/            # Utilities and formatters
-└── cli.py            # Command-line interface
+├── agents/                    # AI agent implementations
+│   ├── base.py               # Base agent framework
+│   ├── deal_sourcing.py      # Deal sourcing agent
+│   ├── research.py           # Research agent
+│   ├── portfolio.py          # Portfolio agent
+│   ├── investor_relations.py # IR/content agent
+│   └── orchestrator.py       # Multi-agent coordination
+├── core/                      # Core business logic
+│   ├── models.py             # Data models (Company, Deal, Investment)
+│   ├── thesis.py             # Investment thesis and scoring
+│   ├── portfolio.py          # Portfolio management
+│   └── research_workflows.py # Automated research system
+├── integrations/              # External platform integrations
+├── utils/                     # Utilities and formatters
+└── cli.py                     # Command-line interface
+
+scripts/
+├── run_demo.py               # Demo script
+└── scheduled_research.py     # Cron-based research refresh
+
+docs/                          # GitBook documentation
 ```
 
 ## Installation
@@ -72,12 +81,26 @@ pip install -e ".[dev]"
 # Run interactive CLI
 python -m epochal.cli
 
-# Or use individual commands
-python -m epochal.cli scan        # Scan for opportunities
-python -m epochal.cli liquidity   # Find liquidity events
-python -m epochal.cli evaluate Anthropic  # Evaluate a company
-python -m epochal.cli briefing    # Run daily briefing
-python -m epochal.cli portfolio   # View portfolio
+# Deal Sourcing
+python -m epochal.cli scan                  # Scan for opportunities
+python -m epochal.cli liquidity             # Find liquidity events
+python -m epochal.cli evaluate Anthropic    # Evaluate a company
+
+# Research
+python -m epochal.cli research "Lambda Labs"  # Research a company
+python -m epochal.cli refresh               # Refresh all research
+python -m epochal.cli research-status       # Check research status
+
+# Portfolio & Briefing
+python -m epochal.cli briefing              # Run daily briefing
+python -m epochal.cli portfolio             # View portfolio
+
+# Investor Relations / Content
+python -m epochal.cli substack thesis       # Draft Substack article
+python -m epochal.cli linkedin              # Draft LinkedIn post
+python -m epochal.cli twitter               # Draft Twitter thread
+python -m epochal.cli investor-update       # Draft LP update
+python -m epochal.cli pitch                 # Draft fundraising pitch
 ```
 
 ### Demo Script
@@ -207,9 +230,19 @@ scoring_weights:
 - [ ] Integration with secondary market platforms (Forge, EquityZen)
 - [ ] Real-time news and intelligence feeds
 - [ ] Automated deal flow ingestion
-- [ ] LP reporting and communications
+- [x] LP reporting and communications (Investor Relations Agent)
+- [x] Automated research workflows (Research Workflows)
 - [ ] Risk management agent
 - [ ] Compliance and regulatory agent
+
+## Documentation
+
+Full documentation available in `/docs` (GitBook-compatible):
+
+- [Quick Start](docs/quickstart.md)
+- [Investment Thesis](docs/thesis.md)
+- [CLI Reference](docs/platform/cli-reference.md)
+- [Agent Framework](docs/agents/overview.md)
 
 ## License
 
