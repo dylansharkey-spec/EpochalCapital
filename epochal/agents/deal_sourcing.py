@@ -41,7 +41,7 @@ class DealOpportunity:
 
 
 # Known high-value AI companies to track (this would be updated dynamically)
-# Last Updated: January 28, 2026
+# Last Updated: January 28, 2026 - Major Update: Added 13 new companies from deep research
 TRACKED_AI_COMPANIES = [
     {
         "name": "Anthropic",
@@ -421,6 +421,241 @@ TRACKED_AI_COMPANIES = [
         ],
         "revenue_arr_usd": 2_000_000_000,  # ~$2B estimated
         "tags": ["valuation_risk", "premium_to_last_round"],
+    },
+    # =========================================================================
+    # NEW COMPANIES ADDED JAN 28, 2026 - Deep Research Update
+    # =========================================================================
+    {
+        "name": "Thinking Machines Lab",
+        "description": "AI research lab founded by ex-OpenAI CTO Mira Murati, building agentic AI infrastructure and foundation models",
+        "vertical": AIVertical.FOUNDATION_MODELS,
+        "stage": CompanyStage.SERIES_A,  # Raised seed, seeking Series A at $50B
+        "valuation_usd": 50_000_000_000,  # $50B target valuation (Nov 2025 talks)
+        "key_investors": ["Andreessen Horowitz", "NVIDIA", "Accel", "ServiceNow", "Cisco", "AMD", "Jane Street"],
+        "liquidity_signals": [
+            "$2B seed round at $12B valuation - largest seed ever (Jul 2025)",
+            "Seeking $5B at $50-60B valuation (Nov 2025)",
+            "Tinker API for fine-tuning launched Oct 2025",
+            "Own models launching 2026",
+            "Team includes John Schulman (OpenAI co-founder), Barrett Zoph, Lilian Weng",
+            "Public benefit corporation structure",
+        ],
+        "revenue_arr_usd": None,  # Pre-revenue, building infrastructure
+        "tags": ["founder_led", "top_talent", "high_growth_potential"],
+    },
+    {
+        "name": "Cognition AI",
+        "description": "AI coding agent company behind Devin, the first AI software engineer, acquired Windsurf",
+        "vertical": AIVertical.AI_AGENTS,
+        "stage": CompanyStage.SERIES_C,
+        "valuation_usd": 10_200_000_000,  # $10.2B Sept 2025
+        "key_investors": ["Founders Fund", "Lux Capital", "8VC", "Bain Capital Ventures", "D1 Capital", "Khosla Ventures"],
+        "liquidity_signals": [
+            "$400M Series C at $10.2B valuation Sept 2025",
+            "$155M ARR post-Windsurf acquisition",
+            "30% ARR growth in 7 weeks post-acquisition",
+            "Customers: Goldman Sachs, Citi, Dell, Cisco, Palantir, Nubank",
+            "SWE-1.5 model via Cerebras at 950 tok/s",
+            "Combined with Windsurf = category leader",
+            "Total burn <$20M across company history",
+        ],
+        "revenue_arr_usd": 155_000_000,  # $155M ARR
+    },
+    {
+        "name": "Sierra AI",
+        "description": "Enterprise AI agents for customer experience, founded by ex-Salesforce co-CEO Bret Taylor and Google's Clay Bavor",
+        "vertical": AIVertical.AI_AGENTS,
+        "stage": CompanyStage.SERIES_B,
+        "valuation_usd": 10_000_000_000,  # $10B Sept 2025
+        "key_investors": ["Greenoaks Capital", "Sequoia", "Benchmark", "ICONIQ", "Thrive Capital"],
+        "liquidity_signals": [
+            "$350M Series B at $10B valuation Sept 2025",
+            "$100M ARR in under 2 years (21 months)",
+            "$635M total raised",
+            "Bret Taylor is OpenAI board chairman",
+            "Customers: Discord, Ramp, Rivian, SoFi, ADT, Cigna, SiriusXM",
+            "20%+ customers have $10B+ revenue",
+            "Sierra agents reach 90% of Americans in Retail",
+        ],
+        "revenue_arr_usd": 100_000_000,  # $100M ARR
+    },
+    {
+        "name": "Cursor (Anysphere)",
+        "description": "AI-powered code editor built on VS Code, fastest growing SaaS company ever from $1M to $500M ARR",
+        "vertical": AIVertical.DEVELOPER_TOOLS,
+        "stage": CompanyStage.SERIES_D_PLUS,
+        "valuation_usd": 29_300_000_000,  # $29.3B Nov 2025
+        "key_investors": ["Accel", "Coatue", "Thrive Capital", "Andreessen Horowitz", "DST Global", "Google", "NVIDIA"],
+        "liquidity_signals": [
+            "$2.3B Series D at $29.3B valuation Nov 2025",
+            "$1B+ ARR achieved Dec 2025",
+            "Fastest SaaS ever: $1M to $500M ARR",
+            "1M+ daily active users, 50K+ businesses",
+            "9,900% YoY ARR growth",
+            "Customers: OpenAI, Spotify, Uber, Instacart, MLB",
+            "Rejected acquisition offers from OpenAI",
+            "300+ employees",
+        ],
+        "revenue_arr_usd": 1_000_000_000,  # $1B+ ARR
+    },
+    {
+        "name": "Lovable",
+        "description": "Swedish vibe-coding startup enabling AI-powered app development without code, fastest European AI unicorn",
+        "vertical": AIVertical.DEVELOPER_TOOLS,
+        "stage": CompanyStage.SERIES_B,
+        "valuation_usd": 6_600_000_000,  # $6.6B Dec 2025
+        "key_investors": ["CapitalG", "Menlo Ventures", "Accel", "Khosla Ventures", "NVentures", "Salesforce Ventures", "Databricks Ventures"],
+        "liquidity_signals": [
+            "$330M Series B at $6.6B valuation Dec 2025",
+            "3x valuation increase since July 2025",
+            "$200M+ ARR (doubled from $100M in 4 months)",
+            "$100M ARR in 8 months from launch",
+            "Total raised $500M+ in 2025",
+            "Expanding to Boston and San Francisco",
+            "Uses OpenAI and Anthropic models",
+        ],
+        "revenue_arr_usd": 200_000_000,  # $200M+ ARR
+    },
+    {
+        "name": "Dataiku",
+        "description": "Enterprise AI and data analytics platform, IPO preparation underway with Morgan Stanley and Citi",
+        "vertical": AIVertical.ENTERPRISE_AI,
+        "stage": CompanyStage.PRE_IPO,
+        "valuation_usd": 6_000_000_000,  # $6-9B IPO target, last round $3.7B
+        "key_investors": ["Wellington Management", "Snowflake Ventures", "ICONIQ", "Insight Partners", "Tiger Global", "CapitalG"],
+        "liquidity_signals": [
+            "IPO H1 2026 target - Morgan Stanley & Citi as underwriters",
+            "Kickoff meeting Oct 2025",
+            "$350M+ ARR (Oct 2025)",
+            "700+ enterprise customers including J&J, Toyota, BNP Paribas",
+            "$1.04B total raised",
+            "Targeting $6-9B IPO valuation",
+        ],
+        "revenue_arr_usd": 350_000_000,  # $350M+ ARR
+    },
+    {
+        "name": "Hippocratic AI",
+        "description": "Healthcare AI agents for patient care, chronic disease management, and hospital workforce augmentation",
+        "vertical": AIVertical.HEALTHCARE_AI,
+        "stage": CompanyStage.SERIES_C,
+        "valuation_usd": 3_500_000_000,  # $3.5B Nov 2025
+        "key_investors": ["Avenir Growth", "CapitalG", "General Catalyst", "Andreessen Horowitz", "Kleiner Perkins", "NVIDIA"],
+        "liquidity_signals": [
+            "$126M Series C at $3.5B valuation Nov 2025",
+            "$141M Series B at $1.64B valuation Jan 2025",
+            "$404M total raised",
+            "50+ health system partnerships in 6 countries",
+            "1,000+ clinical use cases",
+            "115M+ patient interactions with no safety issues",
+            "One of fastest growing enterprise healthcare companies per a16z",
+        ],
+    },
+    {
+        "name": "Figure AI",
+        "description": "Humanoid robotics company building general-purpose robots, largest robotics funding of 2025",
+        "vertical": AIVertical.ROBOTICS,
+        "stage": CompanyStage.SERIES_C,
+        "valuation_usd": 39_000_000_000,  # $39B Sept 2025
+        "key_investors": ["Parkway Venture Capital", "Brookfield", "NVIDIA", "Intel Capital", "Macquarie", "Salesforce", "Qualcomm Ventures"],
+        "liquidity_signals": [
+            "$1B+ Series C at $39B valuation Sept 2025",
+            "15x valuation increase from $2.6B (Feb 2024)",
+            "$1.9B total raised",
+            "100,000 humanoid shipment target over 4 years",
+            "BMW deployment: 90,000+ parts loaded, 30,000+ vehicles",
+            "Robot-as-a-Service: $1,000/month/robot",
+            "BotQ manufacturing facility operational",
+        ],
+    },
+    {
+        "name": "Fireworks AI",
+        "description": "AI inference platform for enterprises, founded by PyTorch team, powers Cursor, Uber, DoorDash",
+        "vertical": AIVertical.INFRASTRUCTURE,
+        "stage": CompanyStage.SERIES_C,
+        "valuation_usd": 4_000_000_000,  # $4B Oct 2025
+        "key_investors": ["Lightspeed Venture Partners", "Index Ventures", "Sequoia Capital", "NVIDIA", "AMD", "Databricks"],
+        "liquidity_signals": [
+            "$250M Series C at $4B valuation Oct 2025",
+            "7x valuation increase from $552M Series B",
+            "$327M total raised",
+            "10 trillion+ tokens processed daily",
+            "10,000+ customers",
+            "Hiring 150+ AI researchers and engineers",
+            "Customers: Cursor, Uber, DoorDash, Shopify",
+        ],
+    },
+    {
+        "name": "Vercel",
+        "description": "Frontend cloud platform, creator of Next.js and v0 AI tool, powering modern web development",
+        "vertical": AIVertical.DEVELOPER_TOOLS,
+        "stage": CompanyStage.SERIES_F,
+        "valuation_usd": 9_300_000_000,  # $9.3B Sept 2025
+        "key_investors": ["Accel", "GIC", "BlackRock", "Khosla Ventures", "General Catalyst", "GV", "Tiger Global"],
+        "liquidity_signals": [
+            "$300M Series F at $9.3B valuation Sept 2025",
+            "3x valuation increase from $3.25B (May 2024)",
+            "$200M ARR, 82% YoY revenue growth",
+            "$300M secondary tender for employees (Nov 2025)",
+            "v0 AI tool: 3.5M+ unique users",
+            "Next.js downloads doubled YoY",
+            "Series F often final round before IPO",
+            "$863M total raised",
+        ],
+        "revenue_arr_usd": 200_000_000,  # $200M ARR
+    },
+    {
+        "name": "Crusoe Energy",
+        "description": "AI data center developer, lead partner on OpenAI Stargate project, building gigawatt-scale AI infrastructure",
+        "vertical": AIVertical.INFRASTRUCTURE,
+        "stage": CompanyStage.SERIES_E,
+        "valuation_usd": 10_000_000_000,  # $10B+ Oct 2025
+        "key_investors": ["Valor Equity Partners", "Mubadala Capital", "NVIDIA", "Founders Fund", "Fidelity", "Salesforce Ventures", "Altimeter"],
+        "liquidity_signals": [
+            "$1.38B Series E at $10B+ valuation Oct 2025",
+            "3x valuation increase from $2.8B (Dec 2024)",
+            "$3.9B total raised",
+            "Lead developer of $12B Abilene campus for OpenAI Stargate",
+            "1.2GW Texas campus live Sept 2025",
+            "1.8GW Wyoming campus announced (scalable to 10GW)",
+            "45GW+ power pipeline (4x growth)",
+        ],
+    },
+    {
+        "name": "MiniMax",
+        "description": "Chinese multimodal AI company, first major AI IPO of 2026 in Hong Kong",
+        "vertical": AIVertical.FOUNDATION_MODELS,
+        "stage": CompanyStage.PUBLIC,  # Now public on HKEX
+        "valuation_usd": 15_200_000_000,  # $15.2B market cap post-IPO
+        "key_investors": ["Alibaba", "Tencent", "Abu Dhabi Investment Authority", "IDG Capital", "miHoYo", "ZhenFund"],
+        "liquidity_signals": [
+            "IPO Jan 9, 2026 at HK$165/share",
+            "$619M raised in IPO",
+            "70%+ pop on debut to $11.5B market cap",
+            "Now trading at ~$15.2B",
+            "200M+ cumulative users across 200+ countries",
+            "$850M raised pre-IPO",
+            "MiniMax M1, Hailuo-02, Speech-02, Music-01 models",
+        ],
+        "tags": ["public", "china", "hong_kong_listed"],
+    },
+    {
+        "name": "CoreWeave",
+        "description": "GPU cloud infrastructure company, IPO'd March 2025, key NVIDIA partner",
+        "vertical": AIVertical.INFRASTRUCTURE,
+        "stage": CompanyStage.PUBLIC,  # Now public (CRWV)
+        "valuation_usd": 50_400_000_000,  # ~$50B market cap Jan 2026
+        "key_investors": ["NVIDIA", "Magnetar Capital", "Jane Street", "Fidelity", "BlackRock", "Coatue"],
+        "liquidity_signals": [
+            "IPO March 28, 2025 at $40/share on NASDAQ (CRWV)",
+            "$55.6B revenue backlog secured through 2027",
+            "$1.9B revenue 2024 (737% YoY growth)",
+            "$5.1B revenue expected 2025, $12B in 2026",
+            "NVIDIA $5.3B+ investment",
+            "$30B capex planned 2026",
+            "Stock peaked at $187, currently ~$100",
+        ],
+        "revenue_arr_usd": 5_100_000_000,  # $5.1B expected 2025
+        "tags": ["public", "nasdaq_listed", "gpu_cloud"],
     },
 ]
 
