@@ -2,14 +2,38 @@
 External integrations for Epochal Capital.
 
 This module provides integrations with:
-- Secondary market platforms (Forge, EquityZen, Nasdaq Private Market)
+- Secondary market platforms (Forge, EquityZen, Nasdaq Private Market, Hiive)
 - Data providers (PitchBook, Crunchbase)
 - News and intelligence sources
 - Broker networks
+- Web research engines
 """
 
-# Placeholder for future integrations
-# These would connect to real APIs for deal sourcing and data
+from epochal.integrations.web_research import (
+    WebResearchEngine,
+    ResearchResult,
+    NewsItem,
+)
+from epochal.integrations.secondary_markets import (
+    SecondaryMarketAggregator,
+    SecondaryPricing,
+    SecondaryDeal,
+)
+from epochal.integrations.news_feed import (
+    NewsFeedMonitor,
+    MaterialEvent,
+)
+
+__all__ = [
+    "WebResearchEngine",
+    "ResearchResult",
+    "NewsItem",
+    "SecondaryMarketAggregator",
+    "SecondaryPricing",
+    "SecondaryDeal",
+    "NewsFeedMonitor",
+    "MaterialEvent",
+]
 
 SECONDARY_PLATFORMS = [
     {
