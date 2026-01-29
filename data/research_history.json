@@ -1,0 +1,421 @@
+{
+  "companies": {
+    "Anthropic": [
+      {
+        "company_name": "Anthropic",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 350000000000,
+        "stage": "PRE_IPO",
+        "market_status": "private",
+        "key_investors": ["Google", "Amazon", "Microsoft", "NVIDIA", "Coatue", "GIC", "Sequoia", "Iconiq", "Lightspeed", "Menlo Ventures", "Fidelity", "BlackRock", "Blackstone"],
+        "liquidity_signals": ["IPO H2 2026", "$20B mega-round (doubled from $10B)", "Wilson Sonsini engaged for IPO", "72% chance to IPO before OpenAI per Kalshi"],
+        "risk_factors": ["High valuation", "Competition from OpenAI"],
+        "ipo_status": "Preparing - Wilson Sonsini engaged",
+        "ipo_timeline": "H2 2026",
+        "revenue_arr_usd": 9000000000,
+        "recent_news": [
+          "Jan 28: Doubled fundraise from $10B to $20B at $350B valuation",
+          "Jan 7: Signed term sheet for $10B at $350B - CNBC/TechCrunch",
+          "Microsoft and NVIDIA investing up to $15B in Anthropic",
+          "Revenue surged 1,100% to $4.5B in 2025, ARR now $9B+",
+          "Expects $26B revenue in 2026, positive FCF in 2027"
+        ],
+        "sources": ["CNBC", "TechCrunch", "Financial Times", "The Information"],
+        "score_before": 92.5,
+        "score_after": 96.7,
+        "tags": ["foundation_models", "pre_ipo", "highest_conviction"]
+      }
+    ],
+    "OpenAI": [
+      {
+        "company_name": "OpenAI",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 500000000000,
+        "stage": "PRE_IPO",
+        "market_status": "private",
+        "key_investors": ["Microsoft", "SoftBank", "Thrive Capital"],
+        "liquidity_signals": ["$50B Middle East round in talks", "Seeking $830B valuation", "IPO H2 2026 or 2027"],
+        "risk_factors": ["$41B spent in 2026 alone", "Cash burn rising to $35B/yr by 2027", "$1.4T in commitments", "Needs ever-larger raises"],
+        "ipo_status": "Preparing",
+        "ipo_timeline": "H2 2026 - 2027",
+        "revenue_arr_usd": 20000000000,
+        "recent_news": [
+          "Jan 21: Sam Altman meeting Middle East SWFs for $50B round - Bloomberg/CNBC",
+          "Jan 23: Faces cash crunch - $41B from SoftBank to be spent entirely in 2026",
+          "Jan 6: Market expects IPO alongside SpaceX, Anthropic",
+          "Annual cash burn projected $17B (2026) -> $35B (2027) -> $47B (2028)"
+        ],
+        "sources": ["Bloomberg", "CNBC", "The Information", "Reuters"],
+        "score_before": null,
+        "score_after": null,
+        "tags": ["foundation_models", "pre_ipo", "high_burn", "cash_intensive"]
+      }
+    ],
+    "Databricks": [
+      {
+        "company_name": "Databricks",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 134000000000,
+        "stage": "PRE_IPO",
+        "market_status": "private",
+        "key_investors": ["Andreessen Horowitz", "NEA", "Microsoft", "T. Rowe Price", "Thrive Capital"],
+        "liquidity_signals": ["IPO early 2026", "$4B raise Dec 2025", "$1.8B debt Jan 2026", "No S-1 filed yet"],
+        "risk_factors": ["$7B total debt", "Naveen Rao departure"],
+        "ipo_status": "Imminent - CEO says 'natural outcome'",
+        "ipo_timeline": "Q1-Q2 2026",
+        "revenue_arr_usd": 4800000000,
+        "recent_news": [
+          "Jan 23: Obtained $1.8B additional debt ahead of IPO - CNBC",
+          "Now has access to $7B+ in total debt",
+          "CEO Ali Ghodsi targets $1T valuation long-term",
+          "60%+ of Fortune 500 as customers, 700+ $1M+ ARR clients",
+          "80%+ gross margins, 140% net revenue retention"
+        ],
+        "sources": ["CNBC", "Fortune", "TechTarget"],
+        "score_before": null,
+        "score_after": null,
+        "tags": ["data_infrastructure", "pre_ipo", "ipo_imminent"]
+      }
+    ],
+    "Lambda Labs": [
+      {
+        "company_name": "Lambda Labs",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 5860000000,
+        "stage": "PRE_IPO",
+        "market_status": "private",
+        "key_investors": ["Mubadala", "NVIDIA", "TWG Global", "ARK Invest"],
+        "liquidity_signals": ["IPO H2 2026", "$350M pre-IPO raise in talks (Mubadala leading)", "Morgan Stanley, JPM, Citi engaged"],
+        "risk_factors": [],
+        "ipo_status": "Preparing",
+        "ipo_timeline": "H2 2026",
+        "revenue_arr_usd": 505000000,
+        "recent_news": [
+          "Jan 2026: In talks to raise $350M pre-IPO funding led by Mubadala",
+          "Timeline pushed to H2 2026 (from H1)",
+          "Multi-billion dollar contract signed with Microsoft for GPU access",
+          "$1.5B lease-back deal with NVIDIA (Sept 2025)",
+          "Revenue nearly doubled in H1 2025, 5,000 diverse customers"
+        ],
+        "sources": ["The Information", "Data Center Dynamics", "ION Analytics"],
+        "score_before": 78.0,
+        "score_after": 82.0,
+        "tags": ["infrastructure", "pre_ipo", "active_opportunity"]
+      }
+    ],
+    "Cerebras": [
+      {
+        "company_name": "Cerebras",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 22000000000,
+        "stage": "PRE_IPO",
+        "market_status": "private",
+        "key_investors": ["Fidelity", "Tiger Global", "Atreides Management", "Benchmark", "Altimeter", "Alpha Wave Global"],
+        "liquidity_signals": ["IPO Q2 2026", "$1B raise at $22B in progress", "S-1 filing imminent", "CFIUS cleared"],
+        "risk_factors": ["G42 concerns resolved via restructuring"],
+        "ipo_status": "Filing imminent - Q2 2026 target",
+        "ipo_timeline": "Q2 2026",
+        "revenue_arr_usd": null,
+        "recent_news": [
+          "Jan 15: Targets Q2 2026 IPO launch - Reuters/Seeking Alpha",
+          "Jan 13: In talks to raise $1B at $22B valuation (up from $8.1B in Sept)",
+          "S-1 filing expected as soon as next week",
+          "CFIUS cleared - G42 moved out of primary stakeholder list",
+          "WSE-3: World's largest processor, 4T transistors, claims 21x faster than NVIDIA DGX Blackwell"
+        ],
+        "sources": ["Reuters", "Seeking Alpha", "Bloomberg", "TechCrunch"],
+        "score_before": null,
+        "score_after": null,
+        "tags": ["infrastructure", "pre_ipo", "chips", "ipo_imminent"]
+      }
+    ],
+    "Groq": [
+      {
+        "company_name": "Groq",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 20000000000,
+        "stage": "ACQUIRED",
+        "market_status": "public",
+        "key_investors": ["NVIDIA (acquirer)", "BlackRock", "Neuberger Berman", "Samsung", "Cisco"],
+        "liquidity_signals": ["ACQUIRED by NVIDIA for $20B Dec 2025 - LIQUIDITY EVENT COMPLETE"],
+        "risk_factors": [],
+        "ipo_status": "N/A - Acquired by NVIDIA (public)",
+        "ipo_timeline": null,
+        "revenue_arr_usd": null,
+        "recent_news": ["NVIDIA acquired Groq assets for $20B Dec 2025", "Founders joined NVIDIA", "Now part of NVIDIA (NASDAQ: NVDA)"],
+        "sources": ["CNBC", "Fortune", "The Register"],
+        "score_before": null,
+        "score_after": null,
+        "tags": ["acquired", "liquidity_event_complete", "public_via_acquisition"]
+      }
+    ],
+    "Perplexity AI": [
+      {
+        "company_name": "Perplexity AI",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 20000000000,
+        "stage": "SERIES_D_PLUS",
+        "market_status": "private",
+        "key_investors": ["SoftBank Vision Fund 2", "NVIDIA", "Accel", "Jeff Bezos"],
+        "liquidity_signals": ["$200M ARR approaching", "$656M ARR target 2026", "$400M Snap deal"],
+        "risk_factors": ["100x revenue multiple", "Competition from Google, OpenAI"],
+        "ipo_status": "Not announced",
+        "ipo_timeline": "Possibly late 2026",
+        "revenue_arr_usd": 200000000,
+        "recent_news": [
+          "Jan 2026: $400M deal with Snap - AI search integrated into Snapchat (1B users)",
+          "CEO warns on-device AI could disrupt centralized data centers",
+          "$400M India expansion planned for 2026",
+          "450% growth between 2024-2026, 800% YoY 2024-2025",
+          "Total funding exceeds $1.5B"
+        ],
+        "sources": ["TechCrunch", "Yahoo Finance", "Fast Company"],
+        "score_before": 77.0,
+        "score_after": 79.0,
+        "tags": ["ai_agents", "search", "high_multiple"]
+      }
+    ],
+    "Glean": [
+      {
+        "company_name": "Glean",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 7200000000,
+        "stage": "SERIES_F",
+        "market_status": "private",
+        "key_investors": ["Wellington Management", "Sequoia", "Lightspeed", "Kleiner Perkins"],
+        "liquidity_signals": ["$200M+ ARR", "Cash-flow positive", "CEO founded Rubrik (IPO success)", "Tripled $1M+ customers"],
+        "risk_factors": ["36x revenue multiple (improved from 72x)"],
+        "ipo_status": "Not announced",
+        "ipo_timeline": null,
+        "revenue_arr_usd": 200000000,
+        "recent_news": [
+          "Jan 27: Series F at $7.2B confirmed",
+          "Jan 15: Launched 7 new AI marketing agents",
+          "Jan 14: Launched Glean code search and code writer",
+          "Jan 13: Added image generation to Assistant",
+          "Surpassed $200M ARR - doubled in 9 months",
+          "850 employees, 100M+ agent actions annually"
+        ],
+        "sources": ["CNBC", "TechCrunch", "Crunchbase"],
+        "score_before": 79.5,
+        "score_after": 82.0,
+        "tags": ["enterprise_ai", "search", "cash_flow_positive"]
+      }
+    ],
+    "Mistral AI": [
+      {
+        "company_name": "Mistral AI",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 14000000000,
+        "stage": "SERIES_C",
+        "market_status": "private",
+        "key_investors": ["ASML (11% stake)", "DST Global", "Andreessen Horowitz", "Lightspeed", "NVIDIA", "Bpifrance"],
+        "liquidity_signals": ["Revenue 25x YoY", "IPO ambitions signaled", "EUR 1B revenue target 2026"],
+        "risk_factors": ["European regulatory environment"],
+        "ipo_status": "Ambitions signaled at Davos",
+        "ipo_timeline": null,
+        "revenue_arr_usd": 300000000,
+        "recent_news": [
+          "Jan 2026 (Davos): CEO predicts revenue will exceed EUR 1B in 2026",
+          "Evaluating acquisition opportunities, EUR 1B CapEx earmarked",
+          "Secured French military framework agreement",
+          "EUR 1.7B Series C (Sept 2025) - Europe's largest AI round ever",
+          "ASML took 11% stake (EUR 1.3B), becoming largest shareholder"
+        ],
+        "sources": ["Crunchbase", "Mistral AI blog", "Bismarck Analysis", "FintechWeekly"],
+        "score_before": 79.5,
+        "score_after": 84.0,
+        "tags": ["foundation_models", "european_ai", "defense_contracts"]
+      }
+    ],
+    "Cohere": [
+      {
+        "company_name": "Cohere",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 7000000000,
+        "stage": "SERIES_D_PLUS",
+        "market_status": "private",
+        "key_investors": ["Radical Ventures", "Inovia Capital", "NVIDIA", "Salesforce Ventures"],
+        "liquidity_signals": ["IPO preparation - CFO hired", "Employee tender offer", "$200M ARR target"],
+        "risk_factors": ["Competition from well-funded rivals"],
+        "ipo_status": "Preparing",
+        "ipo_timeline": null,
+        "revenue_arr_usd": 200000000,
+        "recent_news": ["$7B valuation after $100M extension", "CFO hired Aug 2025"],
+        "sources": ["BetaKit", "Bloomberg"],
+        "score_before": null,
+        "score_after": null,
+        "tags": ["foundation_models", "enterprise"]
+      }
+    ],
+    "Anduril": [
+      {
+        "company_name": "Anduril",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 30500000000,
+        "stage": "PRE_IPO",
+        "market_status": "private",
+        "key_investors": ["Founders Fund ($1B lead)", "Andreessen Horowitz", "General Catalyst"],
+        "liquidity_signals": ["IPO 2026 after Ohio facility launch Jul 2026", "CEO 'definitely' going public", "$2.5B Series G"],
+        "risk_factors": ["Defense contract concentration", "Not yet profitable"],
+        "ipo_status": "Preparing - post Ohio facility",
+        "ipo_timeline": "H2 2026 or 2027",
+        "revenue_arr_usd": 2000000000,
+        "recent_news": [
+          "Palmer Luckey: 'Definitely going to be publicly traded'",
+          "Ohio facility ($1B investment) launching Jul 2026 - IPO expected after",
+          "$2.5B Series G at $30.5B valuation led by Founders Fund ($1B)",
+          "Revenue surged to $1B in 2024, now $2B run rate",
+          "America's most valuable private defense contractor (behind only SpaceX)"
+        ],
+        "sources": ["CNBC", "Forbes", "Bloomberg", "Nasdaq Private Market"],
+        "score_before": null,
+        "score_after": null,
+        "tags": ["defense", "robotics", "pre_ipo"]
+      }
+    ],
+    "Scale AI": [
+      {
+        "company_name": "Scale AI",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 29000000000,
+        "stage": "SERIES_D_PLUS",
+        "market_status": "private",
+        "key_investors": ["Meta", "Accel", "Index Ventures", "Founders Fund"],
+        "liquidity_signals": ["Revenue doubled 2025", "$1B+ new bookings", "$99M Army contract"],
+        "risk_factors": ["CEO departed to Meta", "Leadership transition"],
+        "ipo_status": "Not announced",
+        "ipo_timeline": null,
+        "revenue_arr_usd": null,
+        "recent_news": ["$29B valuation after Meta investment", "CEO Alexandr Wang joined Meta"],
+        "sources": ["Seeking Alpha", "CNBC"],
+        "score_before": null,
+        "score_after": null,
+        "tags": ["data_infrastructure", "leadership_exodus"]
+      }
+    ],
+    "Replit": [
+      {
+        "company_name": "Replit",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 9000000000,
+        "stage": "SERIES_D_PLUS",
+        "market_status": "private",
+        "key_investors": ["Georgian (leading new round)", "Prysm Capital", "Google AI Futures Fund", "Andreessen Horowitz"],
+        "liquidity_signals": ["$400M raise at $9B in progress Jan 2026", "$240M revenue 2025", "$1B target 2026"],
+        "risk_factors": ["Competition from Cursor ($29B), OpenAI, Anthropic"],
+        "ipo_status": "Not announced",
+        "ipo_timeline": null,
+        "revenue_arr_usd": 240000000,
+        "recent_news": [
+          "Jan 15: Nearing $400M raise at $9B valuation (3x from Sept) - Bloomberg",
+          "Georgian leading the new round",
+          "150K+ paying customers, $240M revenue 2025",
+          "Targets $1B revenue in 2026",
+          "Launched AI mobile app builder - 'vibe coding' pioneer",
+          "Competes with Cursor ($29B), Lovable ($6.6B)"
+        ],
+        "sources": ["Bloomberg", "TechCrunch", "Seeking Alpha"],
+        "score_before": null,
+        "score_after": null,
+        "tags": ["developer_tools", "ai_coding"]
+      }
+    ],
+    "Together AI": [
+      {
+        "company_name": "Together AI",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 3300000000,
+        "stage": "SERIES_B",
+        "market_status": "private",
+        "key_investors": ["General Catalyst", "Prosperity7", "Salesforce Ventures", "NVIDIA"],
+        "liquidity_signals": ["$300M ARR", "10x revenue growth 18 months", "36K NVIDIA GB200 cluster"],
+        "risk_factors": [],
+        "ipo_status": "Not announced",
+        "ipo_timeline": null,
+        "revenue_arr_usd": 300000000,
+        "recent_news": ["$305M Series B at $3.3B Feb 2025"],
+        "sources": ["Crunchbase", "Bloomberg"],
+        "score_before": null,
+        "score_after": null,
+        "tags": ["infrastructure", "open_source"]
+      }
+    ],
+    "Runway": [
+      {
+        "company_name": "Runway",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 3000000000,
+        "stage": "SERIES_D_PLUS",
+        "market_status": "private",
+        "key_investors": ["General Atlantic", "Fidelity", "Baillie Gifford", "NVIDIA", "SoftBank"],
+        "liquidity_signals": ["$308M Series D at $3B Apr 2025", "$300M ARR target", "AMC partnership"],
+        "risk_factors": ["Creative AI competition"],
+        "ipo_status": "Not announced",
+        "ipo_timeline": null,
+        "revenue_arr_usd": 300000000,
+        "recent_news": ["$308M raise at $3B valuation Apr 2025", "Gen-4 model launched"],
+        "sources": ["Variety", "TechCrunch"],
+        "score_before": null,
+        "score_after": null,
+        "tags": ["creative_ai", "video"]
+      }
+    ],
+    "Lightmatter": [
+      {
+        "company_name": "Lightmatter",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 8730000000,
+        "stage": "SERIES_D_PLUS",
+        "market_status": "private",
+        "key_investors": ["Founders Fund", "Fidelity", "T. Rowe Price", "Lux Capital"],
+        "liquidity_signals": ["CEO stated IPO next", "Former NVIDIA CFO hired as CFO", "Forge estimates $8.73B"],
+        "risk_factors": [],
+        "ipo_status": "CEO indicated IPO next",
+        "ipo_timeline": null,
+        "revenue_arr_usd": null,
+        "recent_news": [
+          "Jan 26: Strategic partnership with Synopsys for 224G SerDes integration",
+          "Jan 26: Partnership with GUC for commercial Passage 3D CPO solutions",
+          "Forge estimates $8.73B valuation Jan 2026",
+          "Simona Jankowski (ex-NVIDIA CFO) hired as CFO"
+        ],
+        "sources": ["Yahoo Finance", "Forge", "Lightmatter Press"],
+        "score_before": null,
+        "score_after": null,
+        "tags": ["infrastructure", "photonics"]
+      }
+    ],
+    "xAI": [
+      {
+        "company_name": "xAI",
+        "research_date": "2026-01-29T12:00:00.000000",
+        "valuation_usd": 230000000000,
+        "stage": "SERIES_C",
+        "market_status": "private",
+        "key_investors": ["NVIDIA", "Cisco", "Valor Equity Partners", "Fidelity", "QIA", "MGX Abu Dhabi", "Baron Capital", "Tesla ($2B)"],
+        "liquidity_signals": ["Hiive secondary $121-$135/share", "56-79% premium to last round"],
+        "risk_factors": ["115x revenue multiple", "Massive cash burn ($7.8B in 9 months)", "CA AG investigation (Grok content)"],
+        "ipo_status": "Unknown",
+        "ipo_timeline": null,
+        "revenue_arr_usd": 2000000000,
+        "recent_news": [
+          "Jan 28: Tesla to invest $2B in xAI - CNBC",
+          "Jan 6: Closed $20B funding round (exceeded $15B target) - Bloomberg",
+          "Jan 9: Burning $7.8B cash in 9 months, $1.46B Q3 loss alone",
+          "Building $20B data center in Mississippi ('MACROHARDRR') - 2GW, 'world's largest supercomputer'",
+          "Jan 16: CA AG investigating Grok for nonconsensual explicit content"
+        ],
+        "sources": ["Bloomberg", "CNBC", "Hiive", "Financial Times"],
+        "score_before": null,
+        "score_after": null,
+        "tags": ["foundation_models", "valuation_risk", "high_burn", "pass_recommendation"]
+      }
+    ]
+  },
+  "last_full_refresh": "2026-01-29T12:00:00.000000",
+  "market_status_legend": {
+    "private": "Company has not had an IPO or been acquired by a public company",
+    "public": "Company is publicly traded or acquired by a public company (continue tracking post-IPO)"
+  }
+}
