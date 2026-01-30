@@ -18,12 +18,21 @@
           "Jan 7: Signed term sheet for $10B at $350B - CNBC/TechCrunch",
           "Microsoft and NVIDIA investing up to $15B in Anthropic",
           "Revenue surged 1,100% to $4.5B in 2025, ARR now $9B+",
-          "Expects $26B revenue in 2026, positive FCF in 2027"
+          "Expects $26B revenue in 2026, positive FCF in 2027",
+          "MENLO REPORT: 40% enterprise LLM market share (up from 12% in 2023)",
+          "MENLO REPORT: 54% coding market share - dominated for 18 months",
+          "MENLO REPORT: Overtook OpenAI as #1 enterprise LLM provider"
         ],
-        "sources": ["CNBC", "TechCrunch", "Financial Times", "The Information"],
+        "sources": ["CNBC", "TechCrunch", "Financial Times", "The Information", "Menlo Ventures 2025 Report"],
+        "market_position": {
+          "enterprise_llm_share_pct": 40,
+          "coding_market_share_pct": 54,
+          "share_change_since_2023": "+28 ppts",
+          "source": "Menlo Ventures Dec 2025"
+        },
         "score_before": 92.5,
         "score_after": 96.7,
-        "tags": ["foundation_models", "pre_ipo", "highest_conviction"]
+        "tags": ["foundation_models", "pre_ipo", "highest_conviction", "market_leader"]
       }
     ],
     "OpenAI": [
@@ -43,12 +52,21 @@
           "Jan 21: Sam Altman meeting Middle East SWFs for $50B round - Bloomberg/CNBC",
           "Jan 23: Faces cash crunch - $41B from SoftBank to be spent entirely in 2026",
           "Jan 6: Market expects IPO alongside SpaceX, Anthropic",
-          "Annual cash burn projected $17B (2026) -> $35B (2027) -> $47B (2028)"
+          "Annual cash burn projected $17B (2026) -> $35B (2027) -> $47B (2028)",
+          "MENLO REPORT: Enterprise LLM share fell to 27% (down from 50% in 2023)",
+          "MENLO REPORT: Lost nearly half market share to Anthropic",
+          "MENLO REPORT: Only 21% coding share vs Anthropic's 54%"
         ],
-        "sources": ["Bloomberg", "CNBC", "The Information", "Reuters"],
+        "sources": ["Bloomberg", "CNBC", "The Information", "Reuters", "Menlo Ventures 2025 Report"],
+        "market_position": {
+          "enterprise_llm_share_pct": 27,
+          "coding_market_share_pct": 21,
+          "share_change_since_2023": "-23 ppts",
+          "source": "Menlo Ventures Dec 2025"
+        },
         "score_before": null,
         "score_after": null,
-        "tags": ["foundation_models", "pre_ipo", "high_burn", "cash_intensive"]
+        "tags": ["foundation_models", "pre_ipo", "high_burn", "cash_intensive", "losing_share"]
       }
     ],
     "Databricks": [
@@ -439,5 +457,99 @@
   "market_status_legend": {
     "private": "Company has not had an IPO or been acquired by a public company",
     "public": "Company is publicly traded or acquired by a public company (continue tracking post-IPO)"
+  },
+  "market_intelligence": {
+    "menlo_ventures_enterprise_ai_report_2025": {
+      "report_name": "Menlo Ventures 2025 State of Generative AI in the Enterprise",
+      "report_date": "2025-12-09",
+      "added_date": "2026-01-30",
+      "methodology": "Survey of 495 U.S. enterprise AI decision-makers (C-suite, VPs Engineering/Product), Nov 7-25, 2025",
+      "key_findings": {
+        "market_size": {
+          "enterprise_ai_spend_2025_usd": 37000000000,
+          "enterprise_ai_spend_2024_usd": 11500000000,
+          "enterprise_ai_spend_2023_usd": 1700000000,
+          "yoy_growth_pct": 222,
+          "pct_of_global_saas_market": 6,
+          "note": "Fastest category expansion in enterprise software history"
+        },
+        "spending_breakdown_usd": {
+          "ai_applications_total": 19000000000,
+          "ai_infrastructure_total": 18000000000,
+          "coding_developer_tools": 7300000000,
+          "general_purpose_copilots": 8400000000,
+          "industry_specific_ai": 3500000000
+        },
+        "llm_market_share_2025": {
+          "anthropic_pct": 40,
+          "anthropic_2023_pct": 12,
+          "openai_pct": 27,
+          "openai_2023_pct": 50,
+          "google_pct": 21,
+          "google_2023_pct": 7,
+          "meta_llama_pct": 9,
+          "deepseek_pct": 1,
+          "top_3_combined_pct": 88,
+          "note": "Anthropic more than tripled share; OpenAI lost nearly half"
+        },
+        "coding_market_share": {
+          "anthropic_pct": 54,
+          "openai_pct": 21,
+          "note": "Anthropic dominated coding for 18 months straight - $4B category"
+        },
+        "arr_milestones": {
+          "products_over_1B_arr": 10,
+          "products_over_100M_arr": 50
+        },
+        "company_specific_data": {
+          "cursor": {
+            "arr_usd": 500000000,
+            "note": "Reached $200M before hiring single enterprise sales rep; $500M+ run rate in 2 years"
+          },
+          "lovable": {
+            "arr_usd": 60000000,
+            "note": "Website builder reached $60M+ ARR in under 1 year"
+          }
+        },
+        "adoption_trends": {
+          "buy_vs_build_2025_pct": 76,
+          "buy_vs_build_2024_pct": 53,
+          "ai_deal_conversion_rate_pct": 47,
+          "traditional_saas_conversion_rate_pct": 25,
+          "product_led_growth_pct_of_spend": 27,
+          "shadow_ai_real_plg_pct": 40,
+          "developers_using_ai_daily_pct": 50,
+          "startups_share_of_app_spend_pct": 63,
+          "startups_share_2024_pct": 36
+        },
+        "open_source_usage": {
+          "enterprises_not_using_open_source_pct": 50,
+          "open_source_daily_workloads_pct": 13,
+          "open_source_daily_workloads_early_2025_pct": 19
+        }
+      },
+      "investment_implications": [
+        "Anthropic dominant position validated - 40% enterprise LLM share, 54% coding share",
+        "OpenAI losing ground rapidly - share halved from 50% to 27%",
+        "Coding/developer tools is largest category at $7.3B - gateway to enterprise",
+        "Startups winning vs incumbents - 63% of app spend (up from 36%)",
+        "Product-led growth 4x traditional software - favors agile AI-native companies",
+        "Buy vs build flipped to 76% buy - large TAM for AI application vendors",
+        "10 companies at $1B+ ARR indicates market maturity forming"
+      ],
+      "portfolio_relevance": {
+        "anthropic": "STRONG BUY signal - market leadership validated, 40% LLM share, 54% coding",
+        "openai": "CAUTION - losing market share despite higher spend; execution concerns",
+        "glean": "POSITIVE - enterprise search in $8.4B copilot category",
+        "replit": "POSITIVE - coding tools $7.3B category, PLG motion aligns with trends",
+        "cursor_anysphere": "WATCH - $500M ARR competitor to Replit/GitHub Copilot"
+      },
+      "sources": [
+        "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+        "https://finance.yahoo.com/news/menlo-ventures-2025-state-generative-123000623.html",
+        "https://techcrunch.com/2025/07/31/enterprises-prefer-anthropics-ai-models-over-anyone-elses-including-openais/"
+      ],
+      "bias_note": "Menlo Ventures is an investor in Anthropic - potential positive bias"
+    }
   }
 }
